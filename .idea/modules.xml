@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/htmlParser.iml" filepath="$PROJECT_DIR$/htmlParser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jsoup-test.iml" filepath="$PROJECT_DIR$/jsoup-test.iml" />
     </modules>
   </component>
 </project>

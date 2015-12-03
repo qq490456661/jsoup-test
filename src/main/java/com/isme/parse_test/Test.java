@@ -1,3 +1,5 @@
+package com.isme.parse_test;
+
 import org.htmlparser.Node;
 import org.htmlparser.NodeFilter;
 import org.htmlparser.Parser;
@@ -10,12 +12,26 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 /**
+ * jsoup抓取Zero动漫网的分页（第11页）
+ * 返回动漫的json信息
+ * response:[
+ *      {
+ *          "title" : "" ,//动漫名字
+ *          "type"  : "" ,//分类
+ *          "clickNum"  : "" //点击热度
+ *      },
+ *      {...}
+ * ]
  * Created by linjunjie on 2015/11/26 (linjunjie@raycloud.com).
  */
 public class Test {
+
     public static void main(String[]args){
         String target = "http://www.izero.tv/list/kehuan/11";
         Document document = null;
