@@ -23,6 +23,7 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="htmlParser" />
+        <module name="jsoup-test" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
