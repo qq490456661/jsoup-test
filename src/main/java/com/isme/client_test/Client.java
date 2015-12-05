@@ -11,6 +11,7 @@ import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -48,6 +49,23 @@ public class Client {
         HttpClient httpClient = new DefaultHttpClient();
         HttpGet httpGet = new HttpGet("http://www.zuidaima.com/user/mention.htm");
         httpGet.setHeader("Cookie",set_Cookie);
+        //模拟浏览器去爬，不然会被封IP
+        httpGet.setHeader("Accept","text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
+        httpGet.setHeader("Accept-Language", "zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3");
+        httpGet.setHeader("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:42.0) Gecko/20100101 Firefox/42.0");
+        httpGet.setHeader("Accept-Charset", "gzip, deflate");
+        //httpGet.setHeader("Content-Type","text/html;charset=utf-8");
+        //post打的时候加下面这句
+        //httpGet.setHeader("Content-Type", "application/x-www-form-urlencoded");
+        //httpGet.setHeader("Date",new Date().toString());
+        //httpGet.setHeader("Server","Apache-Coyote/1.1");
+        //httpGet.setHeader("Set-Cookie","JSESSIONID=0A01D7316092EC90DBAE477F4F8A54C74AA0D205D9; Path=/otnBIGipServerotn=836174090.24610.0000; path=/");
+        httpGet.setHeader("Host","kyfw.12306.cn");
+        //httpGet.setHeader("Keep-Alive", "300");
+        httpGet.setHeader("Connection", "Keep-Alive");
+        //httpGet.setHeader("Cache-Control", "no-cache");
+        httpGet.setHeader("Referer", "https://kyfw.12306.cn/otn/login/init");
+
         try {
             HttpResponse resp = httpClient.execute(httpGet);
             System.out.println(resp);
